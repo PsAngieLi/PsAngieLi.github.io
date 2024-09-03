@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el navbar:', error));
+    </script>
+
+    <div class="leyenda">
+        <p>En la forma en que pensamos, nos convertimos.</p>
+    </div>
+
+    <div class="info">
+        <div class="profile">
+            <img src="../imgs/Persona1.png">
+            <h2>Persona 1</h2>
+            <p>Especialidad 1, Especialidad 2</p>
+        </div>
+        <div class="profile">
+            <img src="../imgs/Persona2.png">
+            <h2>Persona 2</h2>
+            <p>Especialidad 1, Especialidad 2</p>
+        </div>
+    </div>
+    
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('pie.html')
+                .then(response => response.text())
+                .then(data => {
+                 document.getElementById('footer-container').innerHTML = data;
+             })
+                .catch(error => console.error('Error al cargar el pie de página:', error));
+        });
+    </script>
+</body>
+</html>

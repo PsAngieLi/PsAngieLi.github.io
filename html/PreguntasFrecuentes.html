@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas frecuentes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar el navbar:', error));
+    </script>
+
+    <div class="presentacionPreguntas">
+        <h2>Preguntas frecuentes</h2>
+    </div>
+    
+    <div class="faq-section">
+        <div class="faq-container">
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 1</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 3</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 5</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 7</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 9</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+            </div>
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 2</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 4</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 6</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 8</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pregunta 10</div>
+                    <div class="faq-answer">Respuesta</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+    
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Si el elemento ya tiene la clase 'active', lo removemos
+                    if (item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    } else {
+                        // Remover la clase 'active' de todos los elementos
+                        faqItems.forEach(i => i.classList.remove('active'));
+                        // Agregar la clase 'active' solo al elemento clicado
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('pie.html')
+                .then(response => response.text())
+                .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+                .catch(error => console.error('Error al cargar el pie de página:', error));
+        });
+    </script>
+</body>
+</html>
