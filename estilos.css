@@ -1,0 +1,293 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #8a15ce;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
+/*Navbar*/
+#navbar-container {
+
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #87CEEB;
+}
+
+.logotipo img {
+  max-width: 100px; /* Ajusta el tamaño de la imagen según lo necesario */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav ul ul {
+  display: none; /* Oculta los submenús inicialmente */
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1; /* Asegura que los submenús se muestren sobre otros elementos */
+}
+
+.nav ul ul ul {
+  left: 100%; /* Mueve el submenú a la derecha del menú padre */
+  top: 0;
+}
+
+.nav ul li {
+  position: relative;
+  margin: 0 15px;
+}
+
+.nav ul li:hover > ul {
+  display: block; /* Muestra el submenú al hacer hover */
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  background-color: #98FF98; /* Fondo color menta */
+}
+
+/* Estilo del submenú */
+.sub-menu {
+  top: 0;
+  left: 100%;
+}
+
+.nav ul ul li {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+.nav ul ul li a {
+  padding: 10px;
+}
+
+.nav ul ul li a:hover {
+  background-color: #98FF98; /* Fondo color menta para submenú */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  #navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav {
+      width: 100%;
+  }
+
+  .nav ul {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .nav ul ul {
+      position: static;
+      box-shadow: none;
+  }
+
+  .nav ul ul ul {
+      position: static;
+  }
+}
+
+
+
+/*Leyenda*/
+
+.leyenda{
+  background-color: gray; /* Color de fondo */
+  color: #FFFFFF; /* Color del texto */
+  padding: 20px;
+  display: grid;
+  width: 97.4%; /* Asegura que el pie de página ocupe todo el ancho de la página */
+  height: 40%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+
+/*Info*/
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.profile {
+  text-align: center;
+  width: 45%;
+}
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.profile h2 {
+  margin: 10px 0 5px;
+}
+.profile p {
+  font-size: 14px;
+  color: #666;
+}
+
+
+/*Pie de pagina*/
+
+.footer {
+  background-color: #87CEEB; /* Color de fondo */
+  color: #FFFFFF; /* Color del texto */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Tres columnas de tamaño proporcional */
+  align-items: center;
+  width: 97.4%; /* Asegura que el pie de página ocupe todo el ancho de la página */
+  position: relative;
+  bottom: 0;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px; /* Espaciado entre elementos */
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espaciado entre "Contacto" y los íconos */
+}
+
+.footer-logo {
+  height: 60px; /* Tamaño del logo ajustado */
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-left p:first-child {
+  font-size: 1.2em; /* Tamaño de la fuente para el nombre del consultorio */
+}
+
+.footer-left p:last-child {
+  font-size: 1em; /* Tamaño de la fuente para el lema */
+}
+
+.footer-center p {
+  margin: 5px 0; /* Margen entre los textos en el centro */
+}
+
+.footer-center a {
+  color: #FFFFFF; /* Color del enlace */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px; /* Espaciado entre los enlaces */
+}
+
+.footer-center a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* Centra los íconos dentro de la columna */
+}
+
+.social-icons img {
+  width: 40px; /* Tamaño de los iconos ajustado */
+  height: 40px;
+}
+
+.footer-right p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1em; /* Tamaño de la fuente para "Contacto" */
+}
+
+/*Preguntas frecuentes*/
+
+.presentacionPreguntas {
+  display: flex;
+  justify-content: center;
+}
+
+.faq-section {
+  max-width: 1200px;
+  margin: 5px auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.faq-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-column {
+  width: 48%;
+}
+
+.faq-item {
+  background-color: #eaf0f6;
+  border: 1px solid #d1dce5;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* Asegura que el contenido oculto no se muestre fuera del contenedor */
+  transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #d1e0f1;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px; /* Ajusta esta altura según el contenido de tus respuestas */
+}
